@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Huang - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: linear-gradient(135deg, #ffc9d4 0%, #ffd4e5 50%, #ffd6d6 100%);
+        min-height: 100vh;
+        padding: 1rem;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 2rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        padding: 2rem;
+    }
+
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+        font-weight: 300;
+    }
+
+    .logo span {
+        font-weight: 700;
+    }
+
+    nav {
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #666;
+        font-size: 0.875rem;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #000;
+    }
+
+    /* Grid Layout */
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        border-radius: 1.5rem;
+        padding: 2rem;
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Hero Section */
+    .hero {
+        background: linear-gradient(135deg, #fff0f3 0%, #ffe4ec 100%);
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 1.3;
+    }
+
+    .hero .italic {
+        font-style: italic;
+    }
+
+    .hero .bold {
+        font-weight: 700;
+    }
+
+    /* Profile Image */
+    .profile {
+        background: #ffc0cb;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        min-height: 400px;
+    }
+
+    .profile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* About Section */
+    .about {
+        background: linear-gradient(135deg, #fff5f7 0%, #ffe8ec 100%);
+        position: relative;
+    }
+
+    .about svg {
+        color: #ccc;
+        margin-bottom: 1rem;
+    }
+
+    .about p {
+        font-size: 0.875rem;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Project Cards */
+    .project {
+        background: linear-gradient(135deg, #ffe4ec 0%, #fff0f3 100%);
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 1rem;
+    }
+
+    .project h3 {
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .project-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .project-images img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 0.75rem;
+    }
+
+    /* Contact Section */
+    .contact {
+        background: linear-gradient(135deg, #ffc9d4 0%, #ffb3c1 100%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    /* Social Links */
+    .social {
+        background: linear-gradient(135deg, #fff5f7 0%, #ffe8ec 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .social a {
+        text-decoration: none;
+        color: #666;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    .social a:hover {
+        color: #000;
+    }
+
+    /* Arrow Icon */
+    .arrow {
+        width: 24px;
+        height: 24px;
+        stroke: currentColor;
+        stroke-width: 2;
+        fill: none;
+    }
+
+    /* Responsive Design */
+    @media (min-width: 768px) {
+        body {
+            padding: 2rem;
+        }
+
+        .container {
+            padding: 2.5rem;
+        }
+
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero {
+            grid-column: span 2;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+            padding: 3rem;
+        }
+
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+        }
+
+        .profile {
+            grid-row: span 2;
+        }
+
+        .contact {
+            grid-column: span 2;
+        }
+
+        .contact h2 {
+            font-size: 3rem;
+        }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+    .card:nth-child(7) { animation-delay: 0.7s; }
+    .card:nth-child(8) { animation-delay: 0.8s; }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">JULIA <span>HUANG</span></div>
+            <nav>
+                <a href="#projects">PROJECTS</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </header>
+
+```
+    <!-- Main Grid -->
+    <div class="grid">
+        <!-- Hero Section -->
+        <div class="card hero">
+            <h2>
+                Artist Redefining<br>
+                <span class="italic">Architecture</span> <span class="bold">with<br>AI-Driven Design</span>
+            </h2>
+        </div>
+
+        <!-- Profile Image -->
+        <div class="card profile">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=800&fit=crop" alt="Julia Huang">
+        </div>
+
+        <!-- About Section -->
+        <div class="card about">
+            <svg class="arrow" viewBox="0 0 24 24">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+            <p>Julia Huang is an innovative AI artist, renowned for blending cutting-edge technology with creative expression. Based in LA, she crafts unusual digital art.</p>
+        </div>
+
+        <!-- Project - Museo -->
+        <div class="card project">
+            <div class="project-header">
+                <h3>Museo</h3>
+                <svg class="arrow" viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                </svg>
+            </div>
+            <div class="project-images">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=300&h=300&fit=crop" alt="Museo 1">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=300&h=300&fit=crop" alt="Museo 2">
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="card contact" onclick="handleContact()">
+            <h2>Contact me</h2>
+            <svg class="arrow" viewBox="0 0 24 24" style="width: 32px; height: 32px;">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+        </div>
+
+        <!-- Project - Elara -->
+        <div class="card project">
+            <div class="project-header">
+                <h3>Elara</h3>
+            </div>
+        </div>
+
+        <!-- Project - Verve -->
+        <div class="card project">
+            <div class="project-header">
+                <h3>Verve</h3>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="card social">
+            <a href="#instagram" onclick="handleSocial(event, 'Instagram')">INSTAGRAM</a>
+            <a href="#twitter" onclick="handleSocial(event, 'Twitter')">TWITTER</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Contact button handler
+    function handleContact() {
+        alert('Contact form would open here!\n\nEmail: julia@example.com\nPhone: +1 (555) 123-4567');
+        // In a real implementation, this would open a modal or redirect to a contact page
+    }
+
+    // Social media handler
+    function handleSocial(event, platform) {
+        event.preventDefault();
+        console.log(`Opening ${platform}...`);
+        alert(`${platform} profile would open here!`);
+        // In a real implementation, this would link to actual social media profiles
+    }
+
+    // Add parallax effect on scroll
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const cards = document.querySelectorAll('.card');
+        
+        cards.forEach((card, index) => {
+            const speed = (index % 3 + 1) * 0.05;
+            card.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+    });
+
+    // Add hover effect for project cards
+    document.querySelectorAll('.project').forEach(project => {
+        project.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        project.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Console message
+    console.log('%c✨ Julia Huang Portfolio', 'font-size: 20px; color: #ff69b4; font-weight: bold;');
+    console.log('%cDesigned with ❤️', 'font-size: 14px; color: #666;');
+</script>
+```
+
+</body>
+</html>
